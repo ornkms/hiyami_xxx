@@ -1,4 +1,3 @@
-
 /* =========================================================
    HIYAMI OFFICIAL SITE
    style.css
@@ -441,8 +440,6 @@ body.opening-finished .hero {
    MAIN PAGE FADE IN
 ====================================================== */
 
-/* OP中はメインページ全体を薄く隠す */
-
 body.hero-ready main {
 
     opacity:
@@ -458,11 +455,6 @@ body.hero-ready main {
         none;
 }
 
-
-/* =====================================================
-   OP終了後
-   メインページ全体がゆっくり浮かび上がる
-====================================================== */
 
 body.hero-show main {
 
@@ -489,7 +481,6 @@ body.hero-show main {
         2.8s
         cubic-bezier(.22, 1, .36, 1);
 }
-
 
 
 /* =====================================================
@@ -579,25 +570,36 @@ body.hero-show main {
 ========================================================= */
 
 #snow-container {
-    position: fixed;
 
-    inset: 0;
+    position:
+        fixed;
 
-    z-index: 2;
+    inset:
+        0;
 
-    pointer-events: none;
+    z-index:
+        2;
 
-    overflow: hidden;
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
 }
 
 .snow {
-    position: absolute;
 
-    top: -20px;
+    position:
+        absolute;
 
-    display: block;
+    top:
+        -20px;
 
-    border-radius: 50%;
+    display:
+        block;
+
+    border-radius:
+        50%;
 
     background:
         rgba(255, 255, 255, 0.8);
@@ -615,25 +617,31 @@ body.hero-show main {
 @keyframes snow-fall {
 
     0% {
+
         transform:
             translate3d(0, -20px, 0);
 
-        opacity: 0;
+        opacity:
+            0;
     }
 
     10% {
-        opacity: 0.8;
+        opacity:
+            0.8;
     }
 
     90% {
-        opacity: 0.8;
+        opacity:
+            0.8;
     }
 
     100% {
+
         transform:
             translate3d(30px, 110vh, 0);
 
-        opacity: 0;
+        opacity:
+            0;
     }
 }
 
@@ -643,19 +651,30 @@ body.hero-show main {
 ========================================================= */
 
 .header {
-    position: fixed;
 
-    top: 0;
-    left: 0;
+    position:
+        fixed;
 
-    width: 100%;
+    top:
+        0;
 
-    z-index: 100;
+    left:
+        0;
 
-    display: flex;
+    width:
+        100%;
 
-    align-items: center;
-    justify-content: space-between;
+    z-index:
+        100;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
 
     padding:
         22px 5vw;
@@ -675,40 +694,55 @@ body.hero-show main {
 }
 
 .header-logo {
+
     font-family:
         "Zen Old Mincho",
         serif;
 
-    font-size: 24px;
+    font-size:
+        24px;
 
-    color: #6f9ab0;
+    color:
+        #6f9ab0;
 
-    letter-spacing: 0.15em;
+    letter-spacing:
+        0.15em;
 }
 
 .nav {
-    display: flex;
 
-    align-items: center;
+    display:
+        flex;
 
-    gap: 24px;
+    align-items:
+        center;
 
-    margin-right: 2vw;
+    gap:
+        24px;
+
+    margin-right:
+        2vw;
 }
 
 .nav a {
-    font-size: 11px;
 
-    letter-spacing: 0.16em;
+    font-size:
+        11px;
 
-    color: #708895;
+    letter-spacing:
+        0.16em;
+
+    color:
+        #708895;
 
     transition:
         opacity 0.3s ease;
 }
 
 .nav a:hover {
-    opacity: 0.55;
+
+    opacity:
+        0.55;
 }
 
 
@@ -717,12 +751,18 @@ body.hero-show main {
 ========================================================= */
 
 .hero {
-    position: relative;
 
-    min-height: 100vh;
-    min-height: 100dvh;
+    position:
+        relative;
 
-    overflow: hidden;
+    min-height:
+        100vh;
+
+    min-height:
+        100dvh;
+
+    overflow:
+        hidden;
 
     background:
         linear-gradient(
@@ -739,38 +779,54 @@ body.hero-show main {
 ========================================================= */
 
 .hero-character {
-    position: absolute;
 
-    z-index: 5;
+    position:
+        absolute;
+
+    z-index:
+        5;
 
     width:
         min(430px, 42vw);
 
-    right: 10%;
+    right:
+        10%;
 
-    top: 50%;
+    top:
+        50%;
 
     transform:
         translateY(-50%);
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
 
-    pointer-events: none;
+    justify-content:
+        center;
+
+    pointer-events:
+        none;
 }
 
 .hero-character img {
-    display: block;
 
-    width: 100%;
+    display:
+        block;
 
-    height: auto;
+    width:
+        100%;
 
-    max-height: 78vh;
+    height:
+        auto;
 
-    object-fit: contain;
+    max-height:
+        78vh;
+
+    object-fit:
+        contain;
 
     filter:
         drop-shadow(
@@ -785,24 +841,33 @@ body.hero-show main {
 ========================================================= */
 
 .hero-name {
-    position: absolute;
 
-    z-index: 6;
+    position:
+        absolute;
 
-    top: 50%;
+    z-index:
+        6;
 
-    left: 28%;
+    top:
+        50%;
+
+    left:
+        28%;
 
     transform:
         translate(-50%, -50%);
 
-    text-align: center;
+    text-align:
+        center;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 .hero-name h1 {
-    margin: 0;
+
+    margin:
+        0;
 
     font-family:
         "Zen Old Mincho",
@@ -811,13 +876,17 @@ body.hero-show main {
     font-size:
         clamp(65px, 9vw, 115px);
 
-    font-weight: 400;
+    font-weight:
+        400;
 
-    line-height: 1;
+    line-height:
+        1;
 
-    letter-spacing: 0.25em;
+    letter-spacing:
+        0.25em;
 
-    margin-right: -0.25em;
+    margin-right:
+        -0.25em;
 
     color:
         rgba(255, 255, 255, 0.92);
@@ -836,7 +905,8 @@ body.hero-show main {
 ========================================================= */
 
 .ice-glow {
-    display: none;
+    display:
+        none;
 }
 
 
@@ -845,9 +915,12 @@ body.hero-show main {
 ========================================================= */
 
 .ice-crystal {
-    position: absolute;
 
-    z-index: 3;
+    position:
+        absolute;
+
+    z-index:
+        3;
 
     color:
         rgba(255, 255, 255, 0.85);
@@ -859,14 +932,20 @@ body.hero-show main {
         0 0 20px
         rgba(180, 230, 250, 0.55);
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 .crystal-1 {
-    top: 25%;
-    left: 15%;
 
-    font-size: 28px;
+    top:
+        25%;
+
+    left:
+        15%;
+
+    font-size:
+        28px;
 
     animation:
         crystal-float-1
@@ -876,10 +955,15 @@ body.hero-show main {
 }
 
 .crystal-2 {
-    top: 35%;
-    right: 32%;
 
-    font-size: 20px;
+    top:
+        35%;
+
+    right:
+        32%;
+
+    font-size:
+        20px;
 
     animation:
         crystal-float-2
@@ -889,10 +973,15 @@ body.hero-show main {
 }
 
 .crystal-3 {
-    bottom: 25%;
-    left: 40%;
 
-    font-size: 18px;
+    bottom:
+        25%;
+
+    left:
+        40%;
+
+    font-size:
+        18px;
 
     animation:
         crystal-float-3
@@ -904,63 +993,75 @@ body.hero-show main {
 @keyframes crystal-float-1 {
 
     0%, 100% {
+
         transform:
             translate(0, 0)
             rotate(0deg)
             scale(1);
 
-        opacity: 0.45;
+        opacity:
+            0.45;
     }
 
     50% {
+
         transform:
             translate(10px, -25px)
             rotate(15deg)
             scale(1.15);
 
-        opacity: 1;
+        opacity:
+            1;
     }
 }
 
 @keyframes crystal-float-2 {
 
     0%, 100% {
+
         transform:
             translate(0, 0)
             rotate(0deg)
             scale(1);
 
-        opacity: 0.45;
+        opacity:
+            0.45;
     }
 
     50% {
+
         transform:
             translate(-12px, -18px)
             rotate(-12deg)
             scale(1.2);
 
-        opacity: 1;
+        opacity:
+            1;
     }
 }
 
 @keyframes crystal-float-3 {
 
     0%, 100% {
+
         transform:
             translate(0, 0)
             rotate(0deg)
             scale(1);
 
-        opacity: 0.45;
+        opacity:
+            0.45;
     }
 
     50% {
+
         transform:
             translate(8px, -22px)
             rotate(10deg)
             scale(1.15);
 
-        opacity: 1;
+        opacity:
+            1;
     }
 }
 
@@ -970,6 +1071,7 @@ body.hero-show main {
 ========================================================= */
 
 .section {
+
     width:
         min(1100px, 90%);
 
@@ -986,25 +1088,36 @@ body.hero-show main {
 ========================================================= */
 
 .section-title {
-    margin-bottom: 45px;
 
-    text-align: center;
+    margin-bottom:
+        45px;
+
+    text-align:
+        center;
 }
 
 .section-title span {
-    display: block;
 
-    margin-bottom: 10px;
+    display:
+        block;
 
-    font-size: 9px;
+    margin-bottom:
+        10px;
 
-    letter-spacing: 0.35em;
+    font-size:
+        9px;
 
-    color: #9bbaca;
+    letter-spacing:
+        0.35em;
+
+    color:
+        #9bbaca;
 }
 
 .section-title h2 {
-    margin: 0;
+
+    margin:
+        0;
 
     font-family:
         "Zen Old Mincho",
@@ -1013,11 +1126,14 @@ body.hero-show main {
     font-size:
         clamp(32px, 5vw, 52px);
 
-    font-weight: 400;
+    font-weight:
+        400;
 
-    letter-spacing: 0.2em;
+    letter-spacing:
+        0.2em;
 
-    color: #668697;
+    color:
+        #668697;
 }
 
 
@@ -1026,6 +1142,7 @@ body.hero-show main {
 ========================================================= */
 
 .glass-card {
+
     background:
         linear-gradient(
             135deg,
@@ -1057,6 +1174,7 @@ body.hero-show main {
 ========================================================= */
 
 .profile-card {
+
     padding:
         55px 40px;
 
@@ -1068,6 +1186,7 @@ body.hero-show main {
 }
 
 .profile-deformed {
+
     width:
         220px;
 
@@ -1106,6 +1225,7 @@ body.hero-show main {
 }
 
 .profile-deformed img {
+
     display:
         block;
 
@@ -1134,17 +1254,20 @@ body.hero-show main {
 @keyframes profile-float {
 
     0%, 100% {
+
         transform:
             translateY(0);
     }
 
     50% {
+
         transform:
             translateY(-12px);
     }
 }
 
 .profile-text {
+
     margin:
         0 auto 30px;
 
@@ -1164,6 +1287,7 @@ body.hero-show main {
 ========================================================= */
 
 .sns-list {
+
     display:
         flex;
 
@@ -1178,6 +1302,7 @@ body.hero-show main {
 }
 
 .sns-button {
+
     min-width:
         110px;
 
@@ -1209,6 +1334,7 @@ body.hero-show main {
 }
 
 .sns-button:hover {
+
     transform:
         translateY(-3px);
 
@@ -1222,6 +1348,7 @@ body.hero-show main {
 ========================================================= */
 
 .news-list {
+
     display:
         flex;
 
@@ -1233,6 +1360,7 @@ body.hero-show main {
 }
 
 .news-card {
+
     border-radius:
         20px;
 
@@ -1241,6 +1369,7 @@ body.hero-show main {
 }
 
 .news-card summary {
+
     display:
         grid;
 
@@ -1264,11 +1393,13 @@ body.hero-show main {
 }
 
 .news-card summary::-webkit-details-marker {
+
     display:
         none;
 }
 
 .news-date {
+
     font-size:
         10px;
 
@@ -1280,6 +1411,7 @@ body.hero-show main {
 }
 
 .news-title {
+
     font-size:
         13px;
 
@@ -1288,6 +1420,7 @@ body.hero-show main {
 }
 
 .news-arrow {
+
     font-size:
         20px;
 
@@ -1299,16 +1432,19 @@ body.hero-show main {
 }
 
 .news-card[open] .news-arrow {
+
     transform:
         rotate(45deg);
 }
 
 .news-detail {
+
     padding:
         0 25px 25px 165px;
 }
 
 .news-detail p {
+
     margin:
         0;
 
@@ -1328,6 +1464,7 @@ body.hero-show main {
 ========================================================= */
 
 .movie-grid {
+
     display:
         grid;
 
@@ -1344,8 +1481,14 @@ body.hero-show main {
         0 auto;
 }
 
+
+/* =========================================================
+   MOVIE CARD
+========================================================= */
+
 .latest-movie,
 .movie-card {
+
     min-width:
         0;
 
@@ -1359,7 +1502,25 @@ body.hero-show main {
         hidden;
 }
 
+
+/* =====================================================
+   最新動画の外枠も16:9
+====================================================== */
+
+.latest-movie {
+
+    aspect-ratio:
+        16 / 11;
+
+    height:
+        auto;
+}
+/* =========================================================
+   MOVIE LABEL
+========================================================= */
+
 .movie-label {
+
     display:
         flex;
 
@@ -1374,6 +1535,7 @@ body.hero-show main {
 }
 
 .movie-label span {
+
     display:
         inline-block;
 
@@ -1397,6 +1559,7 @@ body.hero-show main {
 }
 
 .movie-label p {
+
     margin:
         0;
 
@@ -1409,6 +1572,11 @@ body.hero-show main {
     color:
         #7d8f9d;
 }
+
+
+/* =========================================================
+   MOVIE FRAME
+========================================================= */
 
 .movie-frame {
     position:
@@ -1430,7 +1598,13 @@ body.hero-show main {
         #edf4f8;
 }
 
+
+/* =========================================================
+   YOUTUBE
+========================================================= */
+
 .movie-frame iframe {
+
     position:
         absolute;
 
@@ -1454,12 +1628,217 @@ body.hero-show main {
 }
 
 
+/* =========================================================
+   SONG COVER LIST
+========================================================= */
+
+.song-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+    height:
+        360px;
+
+    overflow-y:
+        auto;
+
+    overflow-x:
+        hidden;
+
+    padding:
+        3px 6px 3px 3px;
+
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+        rgba(145, 181, 199, 0.45)
+        transparent;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.song-list::-webkit-scrollbar {
+
+    width:
+        5px;
+}
+
+.song-list::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+}
+
+.song-list::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(145, 181, 199, 0.45);
+
+    border-radius:
+        100px;
+}
+
+
+/* =========================================================
+   SONG ITEM
+========================================================= */
+
+.song-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        8px 4px;
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    border-radius:
+        0;
+
+    transition:
+        transform 0.35s cubic-bezier(.22,1,.36,1);
+}
+
+.song-item:hover {
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   THUMBNAIL
+========================================================= */
+
+.song-item img {
+
+    width:
+        105px;
+
+    aspect-ratio:
+        16 / 9;
+
+    flex-shrink:
+        0;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        8px;
+
+    display:
+        block;
+
+    transition:
+        transform 0.35s cubic-bezier(.22,1,.36,1),
+        box-shadow 0.35s ease;
+}
+
+.song-item:hover img {
+
+    transform:
+        scale(1.04);
+
+    box-shadow:
+        0 8px 20px
+        rgba(120, 185, 215, 0.18);
+}
+
+
+/* =========================================================
+   SONG INFO
+========================================================= */
+
+.song-info {
+
+    min-width:
+        0;
+
+    padding-right:
+        5px;
+}
+
+.song-title {
+
+    margin:
+        0 0 5px;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+    color:
+        #607986;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
+.song-info span {
+
+    display:
+        block;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.5;
+
+    letter-spacing:
+        0.05em;
+
+    color:
+        #9aafba;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
 
 /* =========================================================
    SCHEDULE
 ========================================================= */
 
 .schedule-list {
+
     display:
         grid;
 
@@ -1477,6 +1856,7 @@ body.hero-show main {
 }
 
 .schedule-card {
+
     min-width:
         0;
 
@@ -1489,16 +1869,15 @@ body.hero-show main {
     overflow:
         hidden;
 
-    /* ふわっと浮く */
     transition:
         transform 0.45s cubic-bezier(.22, 1, .36, 1),
         box-shadow 0.45s cubic-bezier(.22, 1, .36, 1);
 }
 
 
-/* =====================================================
+/* =========================================================
    SCHEDULE HOVER
-====================================================== */
+========================================================= */
 
 .schedule-card:hover {
 
@@ -1512,11 +1891,14 @@ body.hero-show main {
         inset 0 1px 0
         rgba(255, 255, 255, 0.95);
 }
+
+
 /* =========================================================
    SCHEDULE FLYER
 ========================================================= */
 
 .schedule-flyer {
+
     position:
         relative;
 
@@ -1533,8 +1915,8 @@ body.hero-show main {
         13px;
 }
 
-
 .schedule-flyer img {
+
     position:
         absolute;
 
@@ -1563,6 +1945,7 @@ body.hero-show main {
 ========================================================= */
 
 .schedule-detail {
+
     padding:
         20px 5px 5px;
 
@@ -1570,8 +1953,8 @@ body.hero-show main {
         center;
 }
 
-
 .schedule-date {
+
     margin-bottom:
         10px;
 
@@ -1589,8 +1972,8 @@ body.hero-show main {
         #688798;
 }
 
-
 .schedule-date span {
+
     margin-left:
         8px;
 
@@ -1605,8 +1988,8 @@ body.hero-show main {
         #9aafba;
 }
 
-
 .schedule-venue {
+
     font-size:
         11px;
 
@@ -1617,11 +2000,13 @@ body.hero-show main {
         #728894;
 }
 
+
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .contact-card {
+
     max-width:
         700px;
 
@@ -1639,6 +2024,7 @@ body.hero-show main {
 }
 
 .contact-text {
+
     margin:
         0 0 30px;
 
@@ -1653,6 +2039,7 @@ body.hero-show main {
 }
 
 .contact-button {
+
     display:
         inline-flex;
 
@@ -1693,6 +2080,7 @@ body.hero-show main {
 }
 
 .contact-button:hover {
+
     transform:
         translateY(-3px);
 
@@ -1706,6 +2094,7 @@ body.hero-show main {
 ========================================================= */
 
 .footer {
+
     padding:
         35px 20px 50px;
 
@@ -1717,6 +2106,7 @@ body.hero-show main {
 }
 
 .footer p {
+
     margin:
         0;
 
@@ -1735,16 +2125,19 @@ body.hero-show main {
 @media (max-width: 700px) {
 
     .header {
+
         padding:
             18px 20px;
     }
 
     .header-logo {
+
         font-size:
             20px;
     }
 
     .nav {
+
         gap:
             12px;
 
@@ -1753,6 +2146,7 @@ body.hero-show main {
     }
 
     .nav a {
+
         font-size:
             9px;
 
@@ -1761,14 +2155,18 @@ body.hero-show main {
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ====================================================== */
 
     .hero {
+
         min-height:
             100dvh;
     }
 
     .hero-character {
+
         width:
             65vw;
 
@@ -1780,11 +2178,13 @@ body.hero-show main {
     }
 
     .hero-character img {
+
         max-height:
             70vh;
     }
 
     .hero-name {
+
         left:
             25%;
 
@@ -1793,14 +2193,18 @@ body.hero-show main {
     }
 
     .hero-name h1 {
+
         font-size:
             clamp(48px, 14vw, 75px);
     }
 
 
-    /* SECTION */
+    /* =====================================================
+       SECTION
+    ====================================================== */
 
     .section {
+
         width:
             90%;
 
@@ -1809,14 +2213,18 @@ body.hero-show main {
     }
 
 
-    /* PROFILE */
+    /* =====================================================
+       PROFILE
+    ====================================================== */
 
     .profile-card {
+
         padding:
             40px 22px;
     }
 
     .profile-deformed {
+
         width:
             180px;
 
@@ -1825,9 +2233,12 @@ body.hero-show main {
     }
 
 
-    /* NEWS */
+    /* =====================================================
+       NEWS
+    ====================================================== */
 
     .news-card summary {
+
         grid-template-columns:
             90px 1fr 20px;
 
@@ -1839,19 +2250,24 @@ body.hero-show main {
     }
 
     .news-title {
+
         font-size:
             11px;
     }
 
     .news-detail {
+
         padding:
             0 18px 20px;
     }
 
 
-    /* MOVIE */
+    /* =====================================================
+       MOVIE
+    ====================================================== */
 
     .movie-grid {
+
         grid-template-columns:
             1fr;
 
@@ -1864,6 +2280,7 @@ body.hero-show main {
 
     .latest-movie,
     .movie-card {
+
         padding:
             11px;
 
@@ -1871,68 +2288,106 @@ body.hero-show main {
             15px;
     }
 
-```css
-.movie-frame {
-    position:
-        relative;
+
+    /* =====================================================
+       最新動画
+       16:9を維持
+    ====================================================== */
+
+  .latest-movie .movie-frame {
 
     width:
         100%;
 
-    height:
-        420px;
+    aspect-ratio:
+        16 / 11;
 
-    overflow-y:
+    height:
         auto;
 
-    overflow-x:
+    overflow:
         hidden;
-
-    border-radius:
-        13px;
-
-    background:
-        #edf4f8;
-
-    /* スクロールをなめらかに */
-    scroll-behavior:
-        smooth;
-
-    /* スクロールバーを細く */
-    scrollbar-width:
-        thin;
 }
 
 
-/* =====================================================
-   YOUTUBE PLAYLIST
-====================================================== */
+    .latest-movie .movie-frame iframe {
 
-.movie-frame iframe {
-    display:
-        block;
+        position:
+            absolute;
 
-    width:
-        100%;
+        inset:
+            0;
 
-    height:
-        100%;
+        width:
+            100%;
 
-    min-height:
-        420px;
+        height:
+            100%;
 
-    border:
-        none;
-
-    border-radius:
-        13px;
-}
-```
+        min-height:
+            0;
+    }
 
 
-    /* SCHEDULE */
+    /* =====================================================
+       SONG COVERS
+       スクロール部分だけ360px
+    ====================================================== */
+
+    .movie-card .song-list {
+
+        height:
+            360px;
+
+        overflow-y:
+            auto;
+
+        overflow-x:
+            hidden;
+    }
+
+
+    /* =====================================================
+       SONG ITEM
+    ====================================================== */
+
+    .song-item {
+
+        gap:
+            10px;
+
+        padding:
+            7px 2px;
+    }
+
+    .song-item img {
+
+        width:
+            90px;
+
+        border-radius:
+            7px;
+    }
+
+    .song-title {
+
+        font-size:
+            10px;
+    }
+
+    .song-info span {
+
+        font-size:
+            7px;
+    }
+
+
+    /* =====================================================
+       SCHEDULE
+    ====================================================== */
 
     .schedule-list {
+
         grid-template-columns:
             1fr;
 
@@ -1944,54 +2399,32 @@ body.hero-show main {
     }
 
     .schedule-card {
+
         border-radius:
             15px;
     }
 
-    .schedule-card summary {
-        padding:
-            11px;
-    }
-
     .schedule-flyer {
+
         border-radius:
             9px;
     }
 
     .schedule-flyer img {
+
         border-radius:
             9px;
     }
 
-    .schedule-open {
-        right:
-            20px;
 
-        bottom:
-            20px;
-
-        min-height:
-            24px;
-
-        padding:
-            5px 8px;
-
-        font-size:
-            7px;
-    }
-
-    .schedule-arrow {
-        font-size:
-            12px;
-    }
-
-
-    /* CONTACT */
+    /* =====================================================
+       CONTACT
+    ====================================================== */
 
     .contact-card {
+
         padding:
             40px 22px;
     }
 
 }
-```
