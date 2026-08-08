@@ -1,0 +1,1997 @@
+
+/* =========================================================
+   HIYAMI OFFICIAL SITE
+   style.css
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eef8fc 0%,
+            #f8fcfe 45%,
+            #eaf5fa 100%
+        );
+
+    color: #526675;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    font-weight: 400;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   OPENING
+====================================================== */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eaf7fc 0%,
+            #f8fcff 50%,
+            #e6f5fb 100%
+        );
+
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition:
+        opacity 2.5s ease,
+        visibility 2.5s ease;
+}
+
+
+/* =====================================================
+   OP終了
+====================================================== */
+
+#opening.opening-hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   氷の霧
+====================================================== */
+
+#opening::before,
+#opening::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    width: 80vw;
+    height: 80vw;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.95) 0%,
+            rgba(225,245,253,0.75) 35%,
+            rgba(190,225,240,0.35) 60%,
+            rgba(190,225,240,0) 75%
+        );
+
+    filter:
+        blur(45px);
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+
+/* 左の霧 */
+
+#opening::before {
+
+    left: -35%;
+    top: 10%;
+
+    animation:
+        mist-left
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* 右の霧 */
+
+#opening::after {
+
+    right: -35%;
+    bottom: 5%;
+
+    animation:
+        mist-right
+        5.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   OP CONTENT
+====================================================== */
+
+.opening-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   OFFICIAL SITE
+====================================================== */
+
+.opening-sub {
+
+    margin:
+        0 0 18px;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        0.45em;
+
+    margin-right:
+        -0.45em;
+
+    color:
+        #9bbaca;
+
+    opacity:
+        0;
+
+    animation:
+        opening-up
+        1s
+        ease
+        0.2s
+        forwards;
+}
+
+
+/* =====================================================
+   氷見
+====================================================== */
+
+.opening-content h1 {
+
+    margin:
+        0;
+
+    font-family:
+        "Zen Old Mincho",
+        serif;
+
+    font-size:
+        clamp(70px, 10vw, 130px);
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.25em;
+
+    margin-right:
+        -0.25em;
+
+    color:
+        #ffffff;
+
+    text-shadow:
+
+        0 2px 8px
+        rgba(100,170,200,0.25),
+
+        0 0 25px
+        rgba(170,225,250,0.9),
+
+        0 0 60px
+        rgba(200,240,255,0.8);
+
+    opacity:
+        0;
+
+    animation:
+        opening-title
+        1.8s
+        ease
+        0.35s
+        forwards;
+}
+
+
+/* =====================================================
+   HIYAMI
+====================================================== */
+
+.opening-content > span {
+
+    display:
+        block;
+
+    margin:
+        16px 0 0;
+
+    font-size:
+        10px;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.5em;
+
+    margin-right:
+        -0.5em;
+
+    color:
+        #91b5c7;
+
+    opacity:
+        0;
+
+    animation:
+        opening-up
+        1s
+        ease
+        0.9s
+        forwards;
+}
+
+
+/* =====================================================
+   OP中
+====================================================== */
+
+body.opening-active {
+    overflow: hidden;
+}
+
+body.opening-active > *:not(#opening) {
+    visibility: hidden;
+}
+
+
+/* =====================================================
+   OP終了後
+====================================================== */
+
+body.opening-finished {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body.opening-finished > *:not(#opening) {
+    visibility: visible;
+}
+
+
+/* =====================================================
+   HERO
+====================================================== */
+
+body.opening-active .hero {
+
+    opacity:
+        0;
+
+    transform:
+        scale(1.03);
+
+    filter:
+        blur(12px);
+}
+
+
+body.opening-finished .hero {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1);
+
+    filter:
+        blur(0);
+
+    transition:
+        opacity 3s cubic-bezier(.22,1,.36,1),
+        transform 3s cubic-bezier(.22,1,.36,1),
+        filter 3s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =====================================================
+   OPENING ANIMATION
+====================================================== */
+
+@keyframes opening-title {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.96);
+
+        filter:
+            blur(10px);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        filter:
+            blur(2px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes opening-up {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(14px);
+
+        filter:
+            blur(5px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+/* =====================================================
+   MAIN PAGE FADE IN
+====================================================== */
+
+/* OP中はメインページ全体を薄く隠す */
+
+body.hero-ready main {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(18px);
+
+    filter:
+        blur(8px);
+
+    transition:
+        none;
+}
+
+
+/* =====================================================
+   OP終了後
+   メインページ全体がゆっくり浮かび上がる
+====================================================== */
+
+body.hero-show main {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+
+    transition:
+
+        opacity
+        2.8s
+        cubic-bezier(.22, 1, .36, 1),
+
+        transform
+        3.2s
+        cubic-bezier(.22, 1, .36, 1),
+
+        filter
+        2.8s
+        cubic-bezier(.22, 1, .36, 1);
+}
+
+
+
+/* =====================================================
+   氷の霧
+====================================================== */
+
+@keyframes mist-left {
+
+    0% {
+
+        transform:
+            translateX(-20%)
+            scale(0.7);
+
+        opacity:
+            0;
+    }
+
+    20% {
+        opacity:
+            0.8;
+    }
+
+    50% {
+        opacity:
+            0.9;
+    }
+
+    80% {
+        opacity:
+            0.5;
+    }
+
+    100% {
+
+        transform:
+            translateX(40%)
+            scale(1.3);
+
+        opacity:
+            0;
+    }
+}
+
+
+@keyframes mist-right {
+
+    0% {
+
+        transform:
+            translateX(20%)
+            scale(0.7);
+
+        opacity:
+            0;
+    }
+
+    20% {
+        opacity:
+            0.7;
+    }
+
+    50% {
+        opacity:
+            0.85;
+    }
+
+    80% {
+        opacity:
+            0.45;
+    }
+
+    100% {
+
+        transform:
+            translateX(-40%)
+            scale(1.35);
+
+        opacity:
+            0;
+    }
+}
+
+
+/* =========================================================
+   SNOW
+========================================================= */
+
+#snow-container {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.snow {
+    position: absolute;
+
+    top: -20px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 0 8px
+        rgba(190, 230, 245, 0.8);
+
+    animation:
+        snow-fall
+        linear
+        infinite;
+}
+
+@keyframes snow-fall {
+
+    0% {
+        transform:
+            translate3d(0, -20px, 0);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translate3d(30px, 110vh, 0);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        22px 5vw;
+
+    background:
+        rgba(255, 255, 255, 0.28);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.45);
+}
+
+.header-logo {
+    font-family:
+        "Zen Old Mincho",
+        serif;
+
+    font-size: 24px;
+
+    color: #6f9ab0;
+
+    letter-spacing: 0.15em;
+}
+
+.nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    margin-right: 2vw;
+}
+
+.nav a {
+    font-size: 11px;
+
+    letter-spacing: 0.16em;
+
+    color: #708895;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.nav a:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e9f7fc 0%,
+            #f8fcfe 60%,
+            #edf8fc 100%
+        );
+}
+
+
+/* =========================================================
+   HERO CHARACTER
+========================================================= */
+
+.hero-character {
+    position: absolute;
+
+    z-index: 5;
+
+    width:
+        min(430px, 42vw);
+
+    right: 10%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.hero-character img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 78vh;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 25px 45px
+            rgba(100, 170, 200, 0.18)
+        );
+}
+
+
+/* =========================================================
+   HERO NAME
+========================================================= */
+
+.hero-name {
+    position: absolute;
+
+    z-index: 6;
+
+    top: 50%;
+
+    left: 28%;
+
+    transform:
+        translate(-50%, -50%);
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+.hero-name h1 {
+    margin: 0;
+
+    font-family:
+        "Zen Old Mincho",
+        serif;
+
+    font-size:
+        clamp(65px, 9vw, 115px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 0.25em;
+
+    margin-right: -0.25em;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    text-shadow:
+        0 3px 15px
+        rgba(100, 170, 200, 0.2),
+
+        0 0 30px
+        rgba(200, 235, 250, 0.35);
+}
+
+
+/* =========================================================
+   ICE GLOW
+========================================================= */
+
+.ice-glow {
+    display: none;
+}
+
+
+/* =========================================================
+   CRYSTAL
+========================================================= */
+
+.ice-crystal {
+    position: absolute;
+
+    z-index: 3;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    text-shadow:
+        0 0 8px
+        rgba(180, 230, 250, 0.8),
+
+        0 0 20px
+        rgba(180, 230, 250, 0.55);
+
+    pointer-events: none;
+}
+
+.crystal-1 {
+    top: 25%;
+    left: 15%;
+
+    font-size: 28px;
+
+    animation:
+        crystal-float-1
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+.crystal-2 {
+    top: 35%;
+    right: 32%;
+
+    font-size: 20px;
+
+    animation:
+        crystal-float-2
+        5s
+        ease-in-out
+        infinite;
+}
+
+.crystal-3 {
+    bottom: 25%;
+    left: 40%;
+
+    font-size: 18px;
+
+    animation:
+        crystal-float-3
+        4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes crystal-float-1 {
+
+    0%, 100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg)
+            scale(1);
+
+        opacity: 0.45;
+    }
+
+    50% {
+        transform:
+            translate(10px, -25px)
+            rotate(15deg)
+            scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+@keyframes crystal-float-2 {
+
+    0%, 100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg)
+            scale(1);
+
+        opacity: 0.45;
+    }
+
+    50% {
+        transform:
+            translate(-12px, -18px)
+            rotate(-12deg)
+            scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+@keyframes crystal-float-3 {
+
+    0%, 100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg)
+            scale(1);
+
+        opacity: 0.45;
+    }
+
+    50% {
+        transform:
+            translate(8px, -22px)
+            rotate(10deg)
+            scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    width:
+        min(1100px, 90%);
+
+    margin:
+        0 auto;
+
+    padding:
+        120px 0;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.section-title span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.35em;
+
+    color: #9bbaca;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    font-family:
+        "Zen Old Mincho",
+        serif;
+
+    font-size:
+        clamp(32px, 5vw, 52px);
+
+    font-weight: 400;
+
+    letter-spacing: 0.2em;
+
+    color: #668697;
+}
+
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.glass-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.68),
+            rgba(220, 242, 252, 0.35)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 20px 55px
+        rgba(120, 185, 215, 0.12),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.95);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-card {
+    padding:
+        55px 40px;
+
+    border-radius:
+        28px;
+
+    text-align:
+        center;
+}
+
+.profile-deformed {
+    width:
+        220px;
+
+    margin:
+        0 auto 30px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    overflow:
+        visible;
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    border-radius:
+        0;
+
+    box-shadow:
+        none;
+
+    animation:
+        profile-float
+        4s
+        ease-in-out
+        infinite;
+}
+
+.profile-deformed img {
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    border-radius:
+        0;
+
+    background:
+        transparent;
+
+    box-shadow:
+        none;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(120, 185, 215, 0.15)
+        );
+}
+
+@keyframes profile-float {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+.profile-text {
+    margin:
+        0 auto 30px;
+
+    line-height:
+        2;
+
+    font-size:
+        13px;
+
+    color:
+        #687e8c;
+}
+
+
+/* =========================================================
+   SNS
+========================================================= */
+
+.sns-list {
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+}
+
+.sns-button {
+    min-width:
+        110px;
+
+    padding:
+        12px 20px;
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        #6f8795;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.sns-button:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-list {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        15px;
+}
+
+.news-card {
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+}
+
+.news-card summary {
+    display:
+        grid;
+
+    grid-template-columns:
+        120px 1fr 30px;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    padding:
+        22px 25px;
+
+    cursor:
+        pointer;
+
+    list-style:
+        none;
+}
+
+.news-card summary::-webkit-details-marker {
+    display:
+        none;
+}
+
+.news-date {
+    font-size:
+        10px;
+
+    letter-spacing:
+        0.1em;
+
+    color:
+        #9aafba;
+}
+
+.news-title {
+    font-size:
+        13px;
+
+    color:
+        #607986;
+}
+
+.news-arrow {
+    font-size:
+        20px;
+
+    color:
+        #91b5c7;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.news-card[open] .news-arrow {
+    transform:
+        rotate(45deg);
+}
+
+.news-detail {
+    padding:
+        0 25px 25px 165px;
+}
+
+.news-detail p {
+    margin:
+        0;
+
+    line-height:
+        1.9;
+
+    font-size:
+        12px;
+
+    color:
+        #718792;
+}
+
+
+/* =========================================================
+   MOVIE
+========================================================= */
+
+.movie-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        45px;
+
+    width:
+        85%;
+
+    margin:
+        0 auto;
+}
+
+.latest-movie,
+.movie-card {
+    min-width:
+        0;
+
+    padding:
+        18px;
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+}
+
+.movie-label {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin:
+        0 0 18px;
+}
+
+.movie-label span {
+    display:
+        inline-block;
+
+    padding:
+        5px 10px;
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(170, 220, 245, 0.45);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        #526675;
+}
+
+.movie-label p {
+    margin:
+        0;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        0.2em;
+
+    color:
+        #7d8f9d;
+}
+
+.movie-frame {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        13px;
+
+    background:
+        #edf4f8;
+}
+
+.movie-frame iframe {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    border:
+        none;
+
+    border-radius:
+        13px;
+}
+
+
+
+/* =========================================================
+   SCHEDULE
+========================================================= */
+
+.schedule-list {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        45px;
+
+    width:
+        85%;
+
+    margin:
+        0 auto;
+}
+
+.schedule-card {
+    min-width:
+        0;
+
+    padding:
+        18px;
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+    /* ふわっと浮く */
+    transition:
+        transform 0.45s cubic-bezier(.22, 1, .36, 1),
+        box-shadow 0.45s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =====================================================
+   SCHEDULE HOVER
+====================================================== */
+
+.schedule-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 55px
+        rgba(120, 185, 215, 0.22),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.95);
+}
+/* =========================================================
+   SCHEDULE FLYER
+========================================================= */
+
+.schedule-flyer {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        13px;
+}
+
+
+.schedule-flyer img {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        13px;
+}
+
+
+/* =========================================================
+   SCHEDULE DETAIL
+========================================================= */
+
+.schedule-detail {
+    padding:
+        20px 5px 5px;
+
+    text-align:
+        center;
+}
+
+
+.schedule-date {
+    margin-bottom:
+        10px;
+
+    font-family:
+        "Zen Old Mincho",
+        serif;
+
+    font-size:
+        20px;
+
+    letter-spacing:
+        0.1em;
+
+    color:
+        #688798;
+}
+
+
+.schedule-date span {
+    margin-left:
+        8px;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    color:
+        #9aafba;
+}
+
+
+.schedule-venue {
+    font-size:
+        11px;
+
+    letter-spacing:
+        0.12em;
+
+    color:
+        #728894;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-card {
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+
+    padding:
+        55px 35px;
+
+    border-radius:
+        28px;
+
+    text-align:
+        center;
+}
+
+.contact-text {
+    margin:
+        0 0 30px;
+
+    line-height:
+        2;
+
+    font-size:
+        12px;
+
+    color:
+        #718792;
+}
+
+.contact-button {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        160px;
+
+    padding:
+        14px 30px;
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(170, 220, 245, 0.45);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        0.2em;
+
+    color:
+        #607987;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.contact-button:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    padding:
+        35px 20px 50px;
+
+    text-align:
+        center;
+
+    color:
+        #9bbaca;
+}
+
+.footer p {
+    margin:
+        0;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        0.2em;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding:
+            18px 20px;
+    }
+
+    .header-logo {
+        font-size:
+            20px;
+    }
+
+    .nav {
+        gap:
+            12px;
+
+        margin-right:
+            0;
+    }
+
+    .nav a {
+        font-size:
+            9px;
+
+        letter-spacing:
+            0.08em;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height:
+            100dvh;
+    }
+
+    .hero-character {
+        width:
+            65vw;
+
+        right:
+            2%;
+
+        top:
+            52%;
+    }
+
+    .hero-character img {
+        max-height:
+            70vh;
+    }
+
+    .hero-name {
+        left:
+            25%;
+
+        top:
+            48%;
+    }
+
+    .hero-name h1 {
+        font-size:
+            clamp(48px, 14vw, 75px);
+    }
+
+
+    /* SECTION */
+
+    .section {
+        width:
+            90%;
+
+        padding:
+            85px 0;
+    }
+
+
+    /* PROFILE */
+
+    .profile-card {
+        padding:
+            40px 22px;
+    }
+
+    .profile-deformed {
+        width:
+            180px;
+
+        margin-bottom:
+            25px;
+    }
+
+
+    /* NEWS */
+
+    .news-card summary {
+        grid-template-columns:
+            90px 1fr 20px;
+
+        gap:
+            10px;
+
+        padding:
+            18px;
+    }
+
+    .news-title {
+        font-size:
+            11px;
+    }
+
+    .news-detail {
+        padding:
+            0 18px 20px;
+    }
+
+
+    /* MOVIE */
+
+    .movie-grid {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            18px;
+
+        width:
+            75%;
+    }
+
+    .latest-movie,
+    .movie-card {
+        padding:
+            11px;
+
+        border-radius:
+            15px;
+    }
+
+```css
+.movie-frame {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        420px;
+
+    overflow-y:
+        auto;
+
+    overflow-x:
+        hidden;
+
+    border-radius:
+        13px;
+
+    background:
+        #edf4f8;
+
+    /* スクロールをなめらかに */
+    scroll-behavior:
+        smooth;
+
+    /* スクロールバーを細く */
+    scrollbar-width:
+        thin;
+}
+
+
+/* =====================================================
+   YOUTUBE PLAYLIST
+====================================================== */
+
+.movie-frame iframe {
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        420px;
+
+    border:
+        none;
+
+    border-radius:
+        13px;
+}
+```
+
+
+    /* SCHEDULE */
+
+    .schedule-list {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            18px;
+
+        width:
+            75%;
+    }
+
+    .schedule-card {
+        border-radius:
+            15px;
+    }
+
+    .schedule-card summary {
+        padding:
+            11px;
+    }
+
+    .schedule-flyer {
+        border-radius:
+            9px;
+    }
+
+    .schedule-flyer img {
+        border-radius:
+            9px;
+    }
+
+    .schedule-open {
+        right:
+            20px;
+
+        bottom:
+            20px;
+
+        min-height:
+            24px;
+
+        padding:
+            5px 8px;
+
+        font-size:
+            7px;
+    }
+
+    .schedule-arrow {
+        font-size:
+            12px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-card {
+        padding:
+            40px 22px;
+    }
+
+}
+```
