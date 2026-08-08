@@ -171,3 +171,18 @@ scheduleCards.forEach((card) => {
     });
 
 });
+
+/* =====================================================
+   YOUTUBE LATEST MOVIE
+====================================================== */
+
+const latestYoutube = document.getElementById(
+    "latest-youtube"
+);
+
+if (latestYoutube) {
+
+    latestYoutube.src =
+        "https://www.youtube.com/embed/videoseries?list=UUy8ouZkRG3G5MpzkIVgz37w";
+
+}

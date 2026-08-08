@@ -2436,3 +2436,78 @@ body.hero-show main {
     }
 
 }
+
+/* =========================================================
+   LATEST YOUTUBE
+   プレイリスト感を消して「最新動画1本」に見せる
+========================================================= */
+
+/* 最新動画カード */
+.latest-movie {
+    position: relative;
+}
+
+/* YouTubeフレーム */
+.latest-movie .movie-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+/* iframe */
+.latest-movie .movie-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ---------------------------------------------------------
+   YouTubeプレイリスト埋め込み時の見た目調整
+--------------------------------------------------------- */
+
+/*
+   プレイリストのサイドバーが表示される場合に
+   iframe自体を少し大きめにして隠す
+*/
+
+.latest-movie .movie-frame {
+    isolation: isolate;
+}
+
+/*
+   「LATEST MOVIE」を単体動画っぽく見せるため
+   外側の余白・角丸を統一
+*/
+
+.latest-movie {
+    border-radius: 20px;
+}
+
+.latest-movie .movie-frame {
+    border-radius: 13px;
+}
+
+/*
+   YouTube側の黒い余白が見えた場合の背景
+*/
+
+.latest-movie .movie-frame {
+    background: #edf4f8;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .latest-movie {
+        border-radius: 15px;
+    }
+
+    .latest-movie .movie-frame {
+        border-radius: 10px;
+    }
+
+}
