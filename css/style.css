@@ -2289,26 +2289,34 @@ body.hero-show main {
     }
 
 
-    /* =====================================================
+      /* =====================================================
        最新動画
-       16:9を維持
+       スマホ用
     ====================================================== */
 
-  .latest-movie .movie-frame {
+    .latest-movie {
 
-    width:
-        100%;
+        aspect-ratio:
+            auto;
 
-    aspect-ratio:
-        16 / 11;
+        height:
+            auto;
+    }
 
-    height:
-        auto;
+    .latest-movie .movie-frame {
 
-    overflow:
-        hidden;
-}
+        width:
+            100%;
 
+        aspect-ratio:
+            16 / 9;
+
+        height:
+            auto;
+
+        overflow:
+            hidden;
+    }
 
     .latest-movie .movie-frame iframe {
 
